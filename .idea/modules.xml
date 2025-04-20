@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/drink-tea-common/drink-tea-common.iml" filepath="$PROJECT_DIR$/drink-tea-common/drink-tea-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/drink-tea-pojo/drink-tea-pojo.iml" filepath="$PROJECT_DIR$/drink-tea-pojo/drink-tea-pojo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/drink-tea-server/drink-tea-server.iml" filepath="$PROJECT_DIR$/drink-tea-server/drink-tea-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/drink-tea-take-out.iml" filepath="$PROJECT_DIR$/drink-tea-take-out.iml" />
+    </modules>
+  </component>
+</project>
