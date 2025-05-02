@@ -29,4 +29,4 @@ bin/
 .DS_Store
 
 ### Private Config ###
-#drink-tea-server/src/main/resources/application-dev.yml
+drink-tea-server/src/main/resources/application-dev.yml
