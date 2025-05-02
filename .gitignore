@@ -27,3 +27,6 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+
+### Private Config ###
+sky-server/src/main/resources/application-dev.yml
