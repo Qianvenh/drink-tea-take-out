@@ -32,4 +32,13 @@ public interface EmployeeMapper {
      * @return
      */
     Page<Employee> pageQuery(EmployeePageQueryDTO employeePageQueryDTO);
+
+    /**
+     * 启动禁用员工账号
+     * @param employee
+     */
+    void update(Employee employee);
+
+    @Select("select * from employee where id = #{id}")
+    Employee getById(Long id);
 }
