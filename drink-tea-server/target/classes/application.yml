@@ -37,3 +37,9 @@ drinktea:
     admin-ttl: 7200000
     # 设置前端传递过来的令牌名称
     admin-token-name: token
+  alioss:
+    endpoint: ${drinktea.alioss.endpoint}
+    access-key-id: ${drinktea.alioss.access-key-id}
+    access-key-secret: ${drinktea.alioss.access-key-secret}
+    bucket-name: ${drinktea.alioss.bucket-name}
+

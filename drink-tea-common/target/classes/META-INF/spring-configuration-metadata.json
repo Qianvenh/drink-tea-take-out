@@ -1,12 +1,37 @@
 {
   "groups": [
     {
+      "name": "drinktea.alioss",
+      "type": "com.drinktea.properties.AliOssProperties",
+      "sourceType": "com.drinktea.properties.AliOssProperties"
+    },
+    {
       "name": "drinktea.jwt",
       "type": "com.drinktea.properties.JwtProperties",
       "sourceType": "com.drinktea.properties.JwtProperties"
     }
   ],
   "properties": [
+    {
+      "name": "drinktea.alioss.access-key-id",
+      "type": "java.lang.String",
+      "sourceType": "com.drinktea.properties.AliOssProperties"
+    },
+    {
+      "name": "drinktea.alioss.access-key-secret",
+      "type": "java.lang.String",
+      "sourceType": "com.drinktea.properties.AliOssProperties"
+    },
+    {
+      "name": "drinktea.alioss.bucket-name",
+      "type": "java.lang.String",
+      "sourceType": "com.drinktea.properties.AliOssProperties"
+    },
+    {
+      "name": "drinktea.alioss.endpoint",
+      "type": "java.lang.String",
+      "sourceType": "com.drinktea.properties.AliOssProperties"
+    },
     {
       "name": "drinktea.jwt.admin-secret-key",
       "type": "java.lang.String",
@@ -20,8 +45,7 @@
     {
       "name": "drinktea.jwt.admin-ttl",
       "type": "java.lang.Long",
-      "sourceType": "com.drinktea.properties.JwtProperties",
-      "defaultValue": 0
+      "sourceType": "com.drinktea.properties.JwtProperties"
     }
   ],
   "hints": []
