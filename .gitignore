@@ -30,3 +30,5 @@ bin/
 
 ### Private Config ###
 drink-tea-server/src/main/resources/application-dev.yml
+
+**/application-dev.yml
