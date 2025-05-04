@@ -1,9 +1,12 @@
 package com.drinktea.mapper;
 
 import com.drinktea.annotation.AutoFill;
+import com.drinktea.dto.DishPageQueryDTO;
 import com.drinktea.entity.Dish;
 import com.drinktea.enumeration.OperationType;
-import org.apache.ibatis.annotations.Insert;
+import com.drinktea.vo.DishVO;
+import com.github.pagehelper.Page;
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
@@ -24,4 +27,18 @@ public interface DishMapper {
      */
    @AutoFill(OperationType.INSERT)
     void insert(Dish dish);
+
+    /**
+     * 饮品分页查询
+     * @param dishPageQueryDTO
+     * @return
+     */
+    Page<DishVO> pageQuery(DishPageQueryDTO dishPageQueryDTO);
+
+
+    @Select("select * from dish where id = #{id}")
+    Dish getById(Long id);
+
+    @Delete("delete from dish where id = #{id}")
+    void deleteById(Long id);
 }
