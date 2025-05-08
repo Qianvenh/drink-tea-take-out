@@ -12,6 +12,11 @@ spring:
       url: jdbc:mysql://${drinktea.datasource.host}:${drinktea.datasource.port}/${drinktea.datasource.database}?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
       username: ${drinktea.datasource.username}
       password: ${drinktea.datasource.password}
+  redis:
+    host: ${drinktea.redis.host}
+    port: ${drinktea.redis.port}
+    password: ${drinktea.redis.password}
+    database: ${drinktea.redis.database}
 
 mybatis:
   #mapper配置文件

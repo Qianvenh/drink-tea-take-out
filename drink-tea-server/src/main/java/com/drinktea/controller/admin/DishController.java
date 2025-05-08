@@ -5,6 +5,7 @@ import com.drinktea.dto.DishPageQueryDTO;
 import com.drinktea.result.PageResult;
 import com.drinktea.result.Result;
 import com.drinktea.service.DishService;
+import com.drinktea.vo.DishVO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
@@ -19,7 +20,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/admin/dish")
-@Api(tags = "菜品相关接口")
+@Api(tags = "饮品相关接口")
 @Slf4j
 public class DishController {
     @Autowired
@@ -56,6 +57,32 @@ public class DishController {
     public Result delete(@RequestParam List<Long> ids) {
         log.info("批量删除饮品: {}", ids);
         dishService.deleteBatch(ids);
-        return null;
+        return Result.success();
+    }
+
+    /**
+     * 根据id查询饮品
+     * @param id
+     * @return
+     */
+    @GetMapping("/{id}")
+    @ApiOperation("根据id查询饮品")
+    public Result<DishVO> getById(@PathVariable Long id) {
+        log.info("根据id查询饮品, {}", id);
+        DishVO dishVO = dishService.getByIdWithFlavor(id);
+        return Result.success(dishVO);
+    }
+
+    /**
+     * 修改菜品
+     * @param dishDTO
+     * @return
+     */
+    @PutMapping
+    @ApiOperation("修改菜品")
+    public Result update(@RequestBody DishDTO dishDTO) {
+        log.info("修改菜品: {}", dishDTO);
+        dishService.updateWithFlavor(dishDTO);
+        return Result.success();
     }
 }

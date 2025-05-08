@@ -3,6 +3,7 @@ package com.drinktea.service;
 import com.drinktea.dto.DishDTO;
 import com.drinktea.dto.DishPageQueryDTO;
 import com.drinktea.result.PageResult;
+import com.drinktea.vo.DishVO;
 
 import java.util.List;
 
@@ -25,4 +26,17 @@ public interface DishService {
      * @param ids
      */
     void deleteBatch(List<Long> ids);
+
+    /**
+     * 根据id查询菜品
+     * @param id
+     * @return
+     */
+    DishVO getByIdWithFlavor(Long id);
+
+    /**
+     * 修改菜品
+     * @param dishDTO
+     */
+    void updateWithFlavor(DishDTO dishDTO);
 }

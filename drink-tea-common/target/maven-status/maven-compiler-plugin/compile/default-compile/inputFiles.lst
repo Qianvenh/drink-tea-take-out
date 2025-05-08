@@ -1,5 +1,7 @@
 D:\666+\allTheCode\Java\drink-tea-take-out\drink-tea-common\src\main\java\com\drinktea\enumeration\OperationType.java
 D:\666+\allTheCode\Java\drink-tea-take-out\drink-tea-common\src\main\java\com\drinktea\constant\JwtClaimsConstant.java
+D:\666+\allTheCode\Java\drink-tea-take-out\drink-tea-common\src\main\java\com\drinktea\properties\AliOssProperties.java
+D:\666+\allTheCode\Java\drink-tea-take-out\drink-tea-common\src\main\java\com\drinktea\utils\AliOssUtil.java
 D:\666+\allTheCode\Java\drink-tea-take-out\drink-tea-common\src\main\java\com\drinktea\context\BaseContext.java
 D:\666+\allTheCode\Java\drink-tea-take-out\drink-tea-common\src\main\java\com\drinktea\exception\DeletionNotAllowedException.java
 D:\666+\allTheCode\Java\drink-tea-take-out\drink-tea-common\src\main\java\com\drinktea\utils\JwtUtil.java
@@ -14,3 +16,4 @@ D:\666+\allTheCode\Java\drink-tea-take-out\drink-tea-common\src\main\java\com\dr
 D:\666+\allTheCode\Java\drink-tea-take-out\drink-tea-common\src\main\java\com\drinktea\exception\PasswordErrorException.java
 D:\666+\allTheCode\Java\drink-tea-take-out\drink-tea-common\src\main\java\com\drinktea\exception\BaseException.java
 D:\666+\allTheCode\Java\drink-tea-take-out\drink-tea-common\src\main\java\com\drinktea\json\JacksonObjectMapper.java
+D:\666+\allTheCode\Java\drink-tea-take-out\drink-tea-common\src\main\java\com\drinktea\constant\AutoFillConstant.java

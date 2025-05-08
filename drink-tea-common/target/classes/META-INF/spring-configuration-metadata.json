@@ -45,7 +45,8 @@
     {
       "name": "drinktea.jwt.admin-ttl",
       "type": "java.lang.Long",
-      "sourceType": "com.drinktea.properties.JwtProperties"
+      "sourceType": "com.drinktea.properties.JwtProperties",
+      "defaultValue": 0
     }
   ],
   "hints": []
