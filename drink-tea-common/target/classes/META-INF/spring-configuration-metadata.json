@@ -9,6 +9,11 @@
       "name": "drinktea.jwt",
       "type": "com.drinktea.properties.JwtProperties",
       "sourceType": "com.drinktea.properties.JwtProperties"
+    },
+    {
+      "name": "drinktea.wechat",
+      "type": "com.drinktea.properties.WeChatProperties",
+      "sourceType": "com.drinktea.properties.WeChatProperties"
     }
   ],
   "properties": [
@@ -35,6 +40,7 @@
     {
       "name": "drinktea.jwt.admin-secret-key",
       "type": "java.lang.String",
+      "description": "管理端员工生成jwt令牌相关设置",
       "sourceType": "com.drinktea.properties.JwtProperties"
     },
     {
@@ -45,8 +51,68 @@
     {
       "name": "drinktea.jwt.admin-ttl",
       "type": "java.lang.Long",
-      "sourceType": "com.drinktea.properties.JwtProperties",
-      "defaultValue": 0
+      "sourceType": "com.drinktea.properties.JwtProperties"
+    },
+    {
+      "name": "drinktea.jwt.user-secret-key",
+      "type": "java.lang.String",
+      "description": "用户端微信用户生成jwt令牌相关配置",
+      "sourceType": "com.drinktea.properties.JwtProperties"
+    },
+    {
+      "name": "drinktea.jwt.user-token-name",
+      "type": "java.lang.String",
+      "sourceType": "com.drinktea.properties.JwtProperties"
+    },
+    {
+      "name": "drinktea.jwt.user-ttl",
+      "type": "java.lang.Long",
+      "sourceType": "com.drinktea.properties.JwtProperties"
+    },
+    {
+      "name": "drinktea.wechat.api-v3-key",
+      "type": "java.lang.String",
+      "sourceType": "com.drinktea.properties.WeChatProperties"
+    },
+    {
+      "name": "drinktea.wechat.appid",
+      "type": "java.lang.String",
+      "sourceType": "com.drinktea.properties.WeChatProperties"
+    },
+    {
+      "name": "drinktea.wechat.mch-id",
+      "type": "java.lang.String",
+      "sourceType": "com.drinktea.properties.WeChatProperties"
+    },
+    {
+      "name": "drinktea.wechat.mch-serial-no",
+      "type": "java.lang.String",
+      "sourceType": "com.drinktea.properties.WeChatProperties"
+    },
+    {
+      "name": "drinktea.wechat.notify-url",
+      "type": "java.lang.String",
+      "sourceType": "com.drinktea.properties.WeChatProperties"
+    },
+    {
+      "name": "drinktea.wechat.private-key-file-path",
+      "type": "java.lang.String",
+      "sourceType": "com.drinktea.properties.WeChatProperties"
+    },
+    {
+      "name": "drinktea.wechat.refund-notify-url",
+      "type": "java.lang.String",
+      "sourceType": "com.drinktea.properties.WeChatProperties"
+    },
+    {
+      "name": "drinktea.wechat.secret",
+      "type": "java.lang.String",
+      "sourceType": "com.drinktea.properties.WeChatProperties"
+    },
+    {
+      "name": "drinktea.wechat.we-chat-pay-cert-file-path",
+      "type": "java.lang.String",
+      "sourceType": "com.drinktea.properties.WeChatProperties"
     }
   ],
   "hints": []

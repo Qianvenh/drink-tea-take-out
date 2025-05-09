@@ -18,6 +18,7 @@ spring:
     password: ${drinktea.redis.password}
     database: ${drinktea.redis.database}
 
+
 mybatis:
   #mapper配置文件
   mapper-locations: classpath:mapper/*.xml
@@ -42,9 +43,18 @@ drinktea:
     admin-ttl: 7200000
     # 设置前端传递过来的令牌名称
     admin-token-name: token
+    # 设置jwt签名加密时使用的秘钥
+    user-secret-key: itheima
+    # 设置jwt过期时间
+    user-ttl: 7200000
+    # 设置前端传递过来的令牌名称
+    user-token-name: authentication
   alioss:
     endpoint: ${drinktea.alioss.endpoint}
     access-key-id: ${drinktea.alioss.access-key-id}
     access-key-secret: ${drinktea.alioss.access-key-secret}
     bucket-name: ${drinktea.alioss.bucket-name}
+  wechat:
+    appid: ${drinktea.wechat.appid}
+    secret: ${drinktea.wechat.secret}
 

@@ -2,6 +2,7 @@ package com.drinktea.service;
 
 import com.drinktea.dto.DishDTO;
 import com.drinktea.dto.DishPageQueryDTO;
+import com.drinktea.entity.Dish;
 import com.drinktea.result.PageResult;
 import com.drinktea.vo.DishVO;
 
@@ -39,4 +40,11 @@ public interface DishService {
      * @param dishDTO
      */
     void updateWithFlavor(DishDTO dishDTO);
+
+    /**
+     * 条件查询菜品和口味
+     * @param dish
+     * @return
+     */
+    List<DishVO> listWithFlavor(Dish dish);
 }
