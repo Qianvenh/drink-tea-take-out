@@ -11,7 +11,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @SpringBootApplication
 @EnableTransactionManagement
 @Slf4j
-//@EnableCaching
+@EnableCaching
 //@EnableScheduling
 public class DrinkTeaApplication {
     public static void main(String[] args) {
