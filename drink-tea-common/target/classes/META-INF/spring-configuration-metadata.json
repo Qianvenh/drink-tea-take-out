@@ -51,7 +51,8 @@
     {
       "name": "drinktea.jwt.admin-ttl",
       "type": "java.lang.Long",
-      "sourceType": "com.drinktea.properties.JwtProperties"
+      "sourceType": "com.drinktea.properties.JwtProperties",
+      "defaultValue": 0
     },
     {
       "name": "drinktea.jwt.user-secret-key",
@@ -67,7 +68,8 @@
     {
       "name": "drinktea.jwt.user-ttl",
       "type": "java.lang.Long",
-      "sourceType": "com.drinktea.properties.JwtProperties"
+      "sourceType": "com.drinktea.properties.JwtProperties",
+      "defaultValue": 0
     },
     {
       "name": "drinktea.wechat.api-v3-key",
