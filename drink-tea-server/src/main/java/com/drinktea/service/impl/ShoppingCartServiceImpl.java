@@ -18,6 +18,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.time.LocalDateTime;
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -33,6 +34,11 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
     @Autowired
     private SetmealMapper setmealMapper;
 
+    enum Operation {
+        add,
+        sub
+    }
+
     /**
      *
      * @param shoppingCartDTO
@@ -40,15 +46,14 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
     @Override
     @Transactional
     public void add(ShoppingCartDTO shoppingCartDTO) {
-        Long userId = BaseContext.getCurrentId();
         ShoppingCart shoppingCart = new ShoppingCart();
-        shoppingCart.setUserId(userId);
+        shoppingCart.setUserId(BaseContext.getCurrentId());
         BeanUtils.copyProperties(shoppingCartDTO, shoppingCart);
-        List<ShoppingCart> existedShoppingCartList = shoppingCartMapper.exists(shoppingCart);
+        List<ShoppingCart> existedShoppingCartList = shoppingCartMapper.list(shoppingCart);
         // 如果新增的商品已存在购物车中
         if (existedShoppingCartList != null && !existedShoppingCartList.isEmpty()) {
-            ShoppingCart existedCart = getShoppingCart(existedShoppingCartList);
-            shoppingCartMapper.update(existedCart);
+            shoppingCart.setNumber(existedShoppingCartList.get(0).getNumber() + 1);
+            shoppingCartMapper.update(shoppingCart);
             return;
         }
         // 如果新增的商品不在购物车中
@@ -69,17 +74,41 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
         shoppingCartMapper.add(shoppingCart);
     }
 
-    private static ShoppingCart getShoppingCart(List<ShoppingCart> existedShoppingCartList) {
-        ShoppingCart existedCart = existedShoppingCartList.get(0);
-        int oldNumber = existedCart.getNumber();
-//        BigDecimal oldAmount = existedCart.getAmount();
-//        // 用 BigDecimal 计算 (oldAmount * (oldNumber + 1)) / oldNumber
-//        BigDecimal numerator = oldAmount.multiply(BigDecimal.valueOf(oldNumber + 1));
-//        BigDecimal denominator = BigDecimal.valueOf(oldNumber);
-//            // 设定小数位为 2 位，舍入模式为四舍五入
-//        BigDecimal newAmount = numerator.divide(denominator, 2, RoundingMode.HALF_UP);
-//        existedCart.setAmount(newAmount);
-        existedCart.setNumber(oldNumber + 1);
-        return existedCart;
+    /**
+     * 查询用户购物车
+     * @return
+     */
+    @Override
+    public List<ShoppingCart> list() {
+        ShoppingCart shoppingCart = ShoppingCart.builder()
+                .userId(BaseContext.getCurrentId())
+                .build();
+       return shoppingCartMapper.list(shoppingCart);
+    }
+
+    @Override
+    public void sub(ShoppingCartDTO shoppingCartDTO) {
+        ShoppingCart shoppingCart = new ShoppingCart();
+        shoppingCart.setUserId(BaseContext.getCurrentId());
+        BeanUtils.copyProperties(shoppingCartDTO, shoppingCart);
+        List<ShoppingCart> existedShoppingCartList = shoppingCartMapper.list(shoppingCart);
+        // 如果减去的商品数量大于1
+        if (existedShoppingCartList.get(0).getNumber() > 1) {
+            shoppingCart.setNumber(existedShoppingCartList.get(0).getNumber() - 1);
+            shoppingCartMapper.update(shoppingCart);
+        }
+        else // 如果减去的商品数量等于1
+            shoppingCartMapper.delete(shoppingCart);
+    }
+
+    /**
+     * 清空购物车
+     */
+    @Override
+    public void cleanShoppingCart() {
+        ShoppingCart shoppingCart = ShoppingCart.builder()
+                .userId(BaseContext.getCurrentId())
+                .build();
+        shoppingCartMapper.delete(shoppingCart);
     }
 }

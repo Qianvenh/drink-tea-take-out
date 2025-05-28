@@ -1,6 +1,7 @@
 package com.drinktea.mapper;
 
 import com.drinktea.entity.ShoppingCart;
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -23,11 +24,17 @@ public interface ShoppingCartMapper {
      * @param shoppingCart
      * @return
      */
-    List<ShoppingCart> exists(ShoppingCart shoppingCart);
+    List<ShoppingCart> list(ShoppingCart shoppingCart);
 
     /**
      * 更新购物车商品信息
      * @param shoppingCart
      */
     void update(ShoppingCart shoppingCart);
+
+    /**
+     * 删除购物车内容
+     * @param shoppingCart
+     */
+    void delete(ShoppingCart shoppingCart);
 }
